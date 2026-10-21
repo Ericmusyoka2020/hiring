@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b68">
+  <meta name="description" content="Join Stack Crafts Studio as a sales agent and earn 30% or more per successful client.">
+  <title>Join Our Sales Agent Team | Stack Crafts Studio</title>
+
+  <style>
+    :root {
+      --navy: #101b68;
+      --blue: #2457f5;
+      --purple: #7b2ff7;
+      --pink: #f12c91;
+      --orange: #ffae19;
+      --green: #12a86b;
+      --ink: #152044;
+      --muted: #65708c;
+      --paper: #f6f8ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 95% 3%, #7b2ff728, transparent 22rem),
+        radial-gradient(circle at 0% 30%, #2457f51f, transparent 24rem),
+        var(--paper);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header { padding: 22px 0; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 23px;
+      background: linear-gradient(135deg, var(--blue), var(--purple), var(--orange));
+      box-shadow: 0 8px 22px #263bb52b;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 32px;
+      align-items: center;
+      padding: 36px 0 44px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #3e25b7;
+      background: #ece8ff;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      color: var(--navy);
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: .99;
+      letter-spacing: -.055em;
+    }
+
+    h1 span {
+      background: linear-gradient(95deg, var(--blue), var(--purple), var(--pink), #f08a00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      color: #505d7c;
+      font-size: 17px;
+    }
+
+    .earning {
+      margin: 22px 0;
+      padding: 17px 19px;
+      border-radius: 18px;
+      color: white;
+      background: linear-gradient(115deg, var(--navy), #2c42bd 58%, var(--purple));
+      box-shadow: 0 14px 35px #172c8c25;
+    }
+
+    .earning strong {
+      display: block;
+      font-size: clamp(23px, 3vw, 32px);
+      color: #ffd34e;
+      line-height: 1.2;
+    }
+
+    .earning span {
+      font-size: 14px;
+      color: #eef0ff;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 27px;
+      color: white;
+      min-height: 330px;
+      background: linear-gradient(145deg, #101b68, #2457f5 60%, #8b36e8);
+      box-shadow: 0 24px 60px #172c8c2e;
+    }
+
+    .hero-card:after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      right: -60px;
+      top: -70px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card h2 {
+      max-width: 340px;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .hero-card p { color: #e7ebff; }
+
+    .mini-services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .mini-services div {
+      padding: 11px;
+      border-radius: 13px;
+      background: #ffffff1c;
+      border: 1px solid #ffffff29;
+      font-size: 13px;
+    }
+
+    section { padding: 28px 0; }
+
+    .section-heading { margin-bottom: 18px; }
+
+    .section-heading h2 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: clamp(25px, 4vw, 36px);
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid #e8ebfa;
+      border-radius: 18px;
+      padding: 19px;
+      box-shadow: 0 8px 25px #182b7210;
+    }
+
+    .service .ico {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      margin-bottom: 12px;
+      color: white;
+      font-size: 21px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+    }
+
+    .service:nth-child(2) .ico,
+    .service:nth-child(5) .ico {
+      background: linear-gradient(135deg, #0eaa6d, #49c88d);
+    }
+
+    .service:nth-child(3) .ico,
+    .service:nth-child(6) .ico {
+      background: linear-gradient(135deg, #ff9e12, #ff4b89);
+    }
+
+    .service h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+      color: var(--navy);
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel, .form-panel {
+      background: white;
+      border: 1px solid #e7eafa;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 35px #182b7210;
+    }
+
+    .panel h2, .form-panel h2 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      margin: 12px 0;
+      color: #4e5b78;
+    }
+
+    .check {
+      flex: 0 0 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .form-panel h2 { font-size: 28px; }
+
+    .form-panel > p { color: var(--muted); }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 750;
+      color: #28365d;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #dce2f4;
+      border-radius: 12px;
+      background: #fbfcff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px #2457f51a;
+    }
+
+    textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .submit {
+      border: 0;
+      border-radius: 13px;
+      padding: 14px 18px;
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 850;
+      background: linear-gradient(100deg, var(--blue), var(--purple), var(--pink));
+      box-shadow: 0 10px 22px #5d37d52e;
+    }
+
+    .submit:hover { filter: brightness(1.05); }
+
+    .whatsapp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin-top: 12px;
+      width: 100%;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 13px;
+      color: white;
+      font-weight: 800;
+      background: #16a765;
+    }
+
+    .whatsapp:hover { background: #118953; }
+
+    .privacy {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    footer {
+      margin-top: 35px;
+      background: #101b68;
+      color: white;
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer strong { color: #ffd34e; }
+    footer a { color: white; text-decoration: none; }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero, .content-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 18px; }
+      .hero-card { min-height: 0; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .wrap { width: calc(100% - 22px); }
+      .services { grid-template-columns: 1fr; }
+      .panel, .form-panel { padding: 19px; }
+      .hero-card { padding: 22px; }
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">S</div>
+      <div>
+        STACK CRAFTS STUDIO
+        <small>Your Gateway to a Smart Future</small>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">🚀 Sales Agent Opportunity</div>
+        <h1>Connect clients.<br><span>Earn 30%+.</span></h1>
+
+        <p class="intro">
+          Join the Stack Crafts Studio sales agent team. Help businesses
+          and institutions discover digital solutions that save time,
+          improve service, and grow their operations.
+        </p>
+
+        <div class="earning">
+          <strong>Earn 30% and above per client</strong>
+          <span>
+            Commission is based on each client you successfully bring in,
+            subject to the agreed terms for the project.
+          </span>
+        </div>
+
+        <a class="whatsapp"
+           href="https://wa.me/254710911645?text=Hello%20Stack%20Crafts%20Studio%2C%20I%27m%20interested%20in%20joining%20the%20sales%20agent%20team."
+           target="_blank" rel="noopener noreferrer">
+          💬 Chat with us on WhatsApp
+        </a>
+      </div>
+
+      <aside class="hero-card">
+        <div style="font-size:13px;font-weight:800;letter-spacing:.1em;color:#ffd34e">
+          YOUR NETWORK. YOUR OPPORTUNITY.
+        </div>
+        <h2>Help businesses find the right digital solution.</h2>
+        <p>
+          Build connections, introduce our services, and earn when you
+          bring in successful clients.
+        </p>
+
+        <div class="mini-services">
+          <div>🌐 Websites & Web Apps</div>
+          <div>🏫 School Systems</div>
+          <div>🏥 Hospital Systems</div>
+          <div>⚙️ Business Automation</div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="wrap">
+      <div class="section-heading">
+        <h2>What you'll help clients discover</h2>
+        <p>Find people or organizations that need websites, software, or digital services.</p>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <div class="ico">🌐</div>
+          <h3>Websites & Web Applications</h3>
+          <p>Business websites, online stores, portfolios, booking platforms, and custom web apps.</p>
+        </article>
+
+        <article class="service">
+          <div class="ico">🏫</div>
+          <h3>School & Institution Systems</h3>
+          <p>School management, student registration, attendance, results portals, and parent access systems.</p>
+        </article>
+
+        <article class="service">
+          <div class="ico">🏥</div>
+          <h3>Hospital Management Systems</h3>
+          <p>Solutions for patient records, appointments, pharmacy, laboratory, billing, and daily operations.</p>
+        </article>
+
+        <article class="service">
+          <div class="ico">🏢</div>
+          <h3>Business Management Systems</h3>
+          <p>Stock and inventory, sales, reporting, customer management, and workflow automation.</p>
+        </article>
+
+        <article class="service">
+          <div class="ico">💳</div>
+          <h3>Payment & Booking Solutions</h3>
+          <p>Payment integrations, online bookings, service requests, and transaction workflows.</p>
+        </article>
+
+        <article class="service">
+          <div class="ico">🎨</div>
+          <h3>Other Digital Services</h3>
+          <p>SACCO and organization systems, verification portals, promotional designs, and tailored solutions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="content-grid">
+        <div class="panel">
+          <h2>What you'll do</h2>
+          <p style="color:var(--muted);margin:0">
+            You don't need to build the systems yourself. Your role is
+            to identify potential clients and connect them with our team.
+          </p>
+
+          <ul class="checklist">
+            <li><span class="check">✓</span><span>Find businesses, schools, hospitals, and institutions that need digital solutions.</span></li>
+            <li><span class="check">✓</span><span>Introduce our services and help arrange a conversation with potential clients.</span></li>
+            <li><span class="check">✓</span><span>Share client requirements and maintain professional communication.</span></li>
+            <li><span class="check">✓</span><span>Earn commission of <strong>30% or more per successful client</strong>, according to the agreed project terms.</span></li>
+          </ul>
+
+          <div style="margin-top:22px;padding:16px;border-radius:15px;background:linear-gradient(120deg,#fff5d9,#f4eaff)">
+            <strong style="color:var(--navy)">Ready to grow with us?</strong>
+            <div style="color:#5c6280;font-size:14px">
+              Complete the application form and our team can contact you to discuss the opportunity.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel" id="apply">
+          <h2>Apply to Join the Team</h2>
+          <p>Fill in your details and tell us how you'll reach potential clients.</p>
+
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bf0e28a0-7666-4bfc-91ad-bcb1699d5d6c">
+            <input type="hidden" name="subject" value="New Sales Agent Application - Stack Crafts Studio">
+            <input type="hidden" name="from_name" value="Stack Crafts Studio Hiring Portal">
+            <input type="hidden" name="redirect" value="https://hire.stackcrafts.com/">
+
+            <div class="field">
+              <label for="name">Full names *</label>
+              <input id="name" name="name" type="text" autocomplete="name"
+                     placeholder="Enter your full names" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel"
+                     placeholder="e.g. 07XXXXXXXX" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address (optional)</label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                     placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="location">Your location / town *</label>
+              <input id="location" name="location" type="text"
+                     autocomplete="address-level2"
+                     placeholder="e.g. Nairobi, Kitui, Mombasa" required>
+            </div>
+
+            <div class="field">
+              <label for="reach">Where do you plan to find potential clients? *</label>
+              <select id="reach" name="client_finding_methods" required>
+                <option value="" disabled selected>Select an option</option>
+                <option>Local businesses and shops</option>
+                <option>Schools, colleges, and universities</option>
+                <option>Hospitals and clinics</option>
+                <option>Churches, SACCOs, and other institutions</option>
+                <option>Social media and online networking</option>
+                <option>Personal and professional networks</option>
+                <option>A combination of these</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="experience">Sales or networking experience (optional)</label>
+              <select id="experience" name="experience">
+                <option value="" selected>Select experience level</option>
+                <option>New to sales, willing to learn</option>
+                <option>Some sales or marketing experience</option>
+                <option>Experienced in sales or marketing</option>
+                <option>Experienced in business networking</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell us about yourself and how you would find clients *</label>
+              <textarea id="message" name="message"
+                placeholder="For example: I can reach schools in my area through visits and professional contacts..."
+                required></textarea>
+            </div>
+
+            <button class="submit" type="submit">Submit Application →</button>
+          </form>
+
+          <a class="whatsapp"
+             href="https://wa.me/254710911645?text=Hello%20Stack%20Crafts%20Studio%2C%20I%27m%20interested%20in%20the%20sales%20agent%20opportunity."
+             target="_blank" rel="noopener noreferrer">
+            💬 Apply or ask a question on WhatsApp
+          </a>
+
+          <p class="privacy">
+            By submitting, you agree that Stack Crafts Studio may contact
+            you about this sales agent opportunity. Please provide accurate contact details.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <strong>STACK CRAFTS STUDIO</strong><br>
+        <span style="color:#dbe1ff">Your Gateway to a Smart Future</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://hire.stackcrafts.com" target="_blank" rel="noopener noreferrer">Hiring Portal</a>
+        <a href="https://stackcrafts.com" target="_blank" rel="noopener noreferrer">Website</a>
+        <a href="https://wa.me/254710911645" target="_blank" rel="noopener noreferrer">WhatsApp: 0710911645</a>
+        <a href="tel:+254756225185">Call: 0756225185</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
