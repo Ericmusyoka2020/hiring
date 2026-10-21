@@ -1,3 +1,4 @@
+HTML
 
 <!DOCTYPE html>
 <html lang="en">
@@ -789,4 +790,76 @@ footer {
         📱 <a href="tel:+254710911645">0710 911 645</a>
       </div>
       <div class="contact-item">
-        📞 <a href
+        📞 <a href="tel:+254756225185">0756 225 185</a>
+      </div>
+      <div class="contact-item">
+        💬 <a href="https://wa.me/254710911645" target="_blank" rel="noopener noreferrer">WhatsApp Support</a>
+      </div>
+      <div class="contact-item">
+        🌐 <a href="https://stackcrafts.com" target="_blank" rel="noopener noreferrer">stackcrafts.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="wrap footer-bottom-inner">
+      <p>© <span id="year">2026</span> Stack Crafts Studio. All rights reserved.</p>
+      <p>Powered by <strong>Stack Crafts Studio</strong></p>
+      <a href="#top" style="color:#fff;text-decoration:none;font-size:12px">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById("agentForm");
+  const submitButton = document.getElementById("submitButton");
+  const formError = document.getElementById("formError");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting application...";
+    formError.style.display = "none";
+    formError.textContent = "";
+
+    const formData = new FormData(form);
+
+    // Web3Forms configuration
+    formData.append("access_key", "bf0e28a0-7666-4bfc-91ad-bcb1699d5d6c");
+    formData.append("subject", "New Sales Agent Application - Stack Crafts Studio");
+    formData.append("from_name", "Stack Crafts Studio Hiring Portal");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        document.getElementById("applicationPage").style.display = "none";
+        document.getElementById("thankYou").style.display = "block";
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.title = "Thank You | Stack Crafts Studio";
+      } else {
+        throw new Error(result.message || "Your application could not be submitted.");
+      }
+    } catch (error) {
+      formError.textContent =
+        "Sorry, we couldn't submit your application. Please check your internet connection and try again, or contact us on WhatsApp.";
+      formError.style.display = "block";
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit Application →";
+    }
+  });
+</script>
+
+</body>
+</html>
