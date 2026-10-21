@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101b68">
-  <meta name="description" content="Join Stack Crafts Studio as a sales agent and earn 30% or more per successful client.">
-  <title>Join Our Sales Agent Team | Stack Crafts Studio</title>
+  <meta name="description" content="Join Stack Crafts Studio as a sales agent. Connect businesses and institutions with digital solutions and earn 30% or more per successful client.">
+  <title>Sales Agent Recruitment | Stack Crafts Studio</title>
 
   <style>
     :root {
@@ -23,6 +24,8 @@
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
@@ -31,7 +34,7 @@
         radial-gradient(circle at 95% 3%, #7b2ff728, transparent 22rem),
         radial-gradient(circle at 0% 30%, #2457f51f, transparent 24rem),
         var(--paper);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     a { color: inherit; }
@@ -41,7 +44,7 @@
       margin: 0 auto;
     }
 
-    header { padding: 22px 0; }
+    header { padding: 20px 0; }
 
     .brand {
       display: flex;
@@ -69,6 +72,7 @@
       color: var(--muted);
       font-size: 11px;
       font-weight: 600;
+      letter-spacing: 0;
     }
 
     .hero {
@@ -95,7 +99,7 @@
       margin: 18px 0 16px;
       color: var(--navy);
       font-size: clamp(38px, 6vw, 66px);
-      line-height: .99;
+      line-height: 1.04;
       letter-spacing: -.055em;
     }
 
@@ -109,6 +113,7 @@
     .intro {
       color: #505d7c;
       font-size: 17px;
+      max-width: 620px;
     }
 
     .earning {
@@ -124,7 +129,7 @@
       display: block;
       font-size: clamp(23px, 3vw, 32px);
       color: #ffd34e;
-      line-height: 1.2;
+      line-height: 1.3;
     }
 
     .earning span {
@@ -162,10 +167,14 @@
     .hero-card h2 {
       max-width: 340px;
       font-size: 30px;
-      line-height: 1.1;
+      line-height: 1.15;
+      margin: 18px 0 12px;
     }
 
-    .hero-card p { color: #e7ebff; }
+    .hero-card p {
+      max-width: 340px;
+      color: #e7ebff;
+    }
 
     .mini-services {
       display: grid;
@@ -190,9 +199,10 @@
       margin: 0 0 6px;
       color: var(--navy);
       font-size: clamp(25px, 4vw, 36px);
+      letter-spacing: -.035em;
     }
 
-    .section-heading p { color: var(--muted); }
+    .section-heading p { margin: 0; color: var(--muted); }
 
     .services {
       display: grid;
@@ -206,6 +216,12 @@
       border-radius: 18px;
       padding: 19px;
       box-shadow: 0 8px 25px #182b7210;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px #182b7219;
     }
 
     .service .ico {
@@ -254,12 +270,13 @@
       border: 1px solid #e7eafa;
       border-radius: 22px;
       padding: 24px;
-      box-shadow: 0 12px 35px #182b7210;
+      box-shadow: 0 12px 35px #182b720d;
     }
 
     .panel h2, .form-panel h2 {
+      margin: 0 0 8px;
       color: var(--navy);
-      margin-top: 0;
+      font-size: 25px;
     }
 
     .checklist {
@@ -291,15 +308,9 @@
 
     .form-panel > p { color: var(--muted); }
 
-    form {
-      display: grid;
-      gap: 14px;
-    }
+    form { display: grid; gap: 14px; }
 
-    .field {
-      display: grid;
-      gap: 6px;
-    }
+    .field { display: grid; gap: 6px; }
 
     label {
       font-size: 13px;
@@ -317,6 +328,7 @@
       color: var(--ink);
       font: inherit;
       outline: none;
+      transition: border-color .2s, box-shadow .2s;
     }
 
     input:focus, textarea:focus, select:focus {
@@ -324,10 +336,7 @@
       box-shadow: 0 0 0 3px #2457f51a;
     }
 
-    textarea {
-      min-height: 105px;
-      resize: vertical;
-    }
+    textarea { min-height: 105px; resize: vertical; }
 
     .submit {
       border: 0;
@@ -341,7 +350,10 @@
       box-shadow: 0 10px 22px #5d37d52e;
     }
 
-    .submit:hover { filter: brightness(1.05); }
+    .submit:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
 
     .whatsapp {
       display: flex;
@@ -356,6 +368,7 @@
       color: white;
       font-weight: 800;
       background: #16a765;
+      text-align: center;
     }
 
     .whatsapp:hover { background: #118953; }
@@ -363,55 +376,177 @@
     .privacy {
       font-size: 12px;
       color: var(--muted);
-      margin-top: 12px;
+      margin: 12px 0 0;
     }
 
+    /* Professional footer */
     footer {
-      margin-top: 35px;
-      background: #101b68;
+      margin-top: 50px;
+      background:
+        radial-gradient(circle at 90% 0%, #7b2ff735, transparent 22rem),
+        linear-gradient(135deg, #0a124d, #101b68 55%, #172b83);
       color: white;
-      padding: 25px 0;
     }
 
-    .footer-inner {
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+      padding: 48px 0 35px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo {
+      flex-shrink: 0;
+      box-shadow: none;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.02em;
+    }
+
+    .footer-brand small {
+      color: #c7d1ff;
+      font-size: 12px;
+    }
+
+    .footer-about {
+      color: #d3dcff;
+      font-size: 14px;
+      max-width: 340px;
+      margin: 0 0 18px;
+    }
+
+    .footer-heading {
+      margin: 4px 0 16px;
+      color: #ffd34e;
+      font-size: 15px;
+      font-weight: 850;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer-links a {
+      color: #e0e6ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s, padding .2s;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-links a:hover {
+      color: #ffd34e;
+      padding-left: 4px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 0 0 13px;
+      color: #e0e6ff;
+      font-size: 14px;
+    }
+
+    .footer-contact-item .symbol {
+      width: 23px;
+      flex-shrink: 0;
+    }
+
+    .footer-contact-item a {
+      color: #e0e6ff;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact-item a:hover { color: #ffd34e; }
+
+    .footer-cta {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+      padding: 11px 16px;
+      border-radius: 11px;
+      color: white;
+      background: #16a765;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .footer-cta:hover { background: #118953; }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff25;
+      padding: 18px 0;
+    }
+
+    .footer-bottom-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
-    footer strong { color: #ffd34e; }
-    footer a { color: white; text-decoration: none; }
-
-    .footer-links {
-      display: flex;
-      gap: 17px;
-      flex-wrap: wrap;
-      font-size: 14px;
+    .copyright {
+      margin: 0;
+      color: #c7d1ff;
+      font-size: 12px;
     }
+
+    .powered {
+      margin: 0;
+      color: #c7d1ff;
+      font-size: 12px;
+    }
+
+    .powered strong { color: #ffd34e; }
+
+    .back-top {
+      color: #fff;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .back-top:hover { color: #ffd34e; }
 
     @media (max-width: 800px) {
       .hero, .content-grid { grid-template-columns: 1fr; }
       .hero { padding-top: 18px; }
       .hero-card { min-height: 0; }
       .services { grid-template-columns: repeat(2, 1fr); }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+      .footer-about-column { grid-column: 1 / -1; }
     }
 
     @media (max-width: 500px) {
-      .wrap { width: calc(100% - 22px); }
+      .wrap { width: min(100% - 22px, 1120px); }
       .services { grid-template-columns: 1fr; }
       .panel, .form-panel { padding: 19px; }
       .hero-card { padding: 22px; }
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+      .mini-services { grid-template-columns: 1fr 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; }
+      .footer-about-column { grid-column: auto; }
+      .footer-bottom-inner { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <header class="wrap">
     <div class="brand">
       <div class="logo" aria-hidden="true">S</div>
@@ -429,9 +564,9 @@
         <h1>Connect clients.<br><span>Earn 30%+.</span></h1>
 
         <p class="intro">
-          Join the Stack Crafts Studio sales agent team. Help businesses
-          and institutions discover digital solutions that save time,
-          improve service, and grow their operations.
+          Join the Stack Crafts Studio sales agent team. Help businesses and
+          institutions discover digital solutions that save time, improve
+          service, and grow their operations.
         </p>
 
         <div class="earning">
@@ -455,8 +590,8 @@
         </div>
         <h2>Help businesses find the right digital solution.</h2>
         <p>
-          Build connections, introduce our services, and earn when you
-          bring in successful clients.
+          Build connections, introduce our services, and earn when you bring
+          in successful clients.
         </p>
 
         <div class="mini-services">
@@ -518,15 +653,27 @@
         <div class="panel">
           <h2>What you'll do</h2>
           <p style="color:var(--muted);margin:0">
-            You don't need to build the systems yourself. Your role is
-            to identify potential clients and connect them with our team.
+            You don't need to build the systems yourself. Your role is to
+            identify potential clients and connect them with our team.
           </p>
 
           <ul class="checklist">
-            <li><span class="check">✓</span><span>Find businesses, schools, hospitals, and institutions that need digital solutions.</span></li>
-            <li><span class="check">✓</span><span>Introduce our services and help arrange a conversation with potential clients.</span></li>
-            <li><span class="check">✓</span><span>Share client requirements and maintain professional communication.</span></li>
-            <li><span class="check">✓</span><span>Earn commission of <strong>30% or more per successful client</strong>, according to the agreed project terms.</span></li>
+            <li>
+              <span class="check">✓</span>
+              <span>Find businesses, schools, hospitals, and institutions that need digital solutions.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Introduce our services and help arrange a conversation with potential clients.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Share client requirements and maintain professional communication.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Earn commission of <strong>30% or more per successful client</strong>, according to the agreed project terms.</span>
+            </li>
           </ul>
 
           <div style="margin-top:22px;padding:16px;border-radius:15px;background:linear-gradient(120deg,#fff5d9,#f4eaff)">
@@ -545,7 +692,7 @@
             <input type="hidden" name="access_key" value="bf0e28a0-7666-4bfc-91ad-bcb1699d5d6c">
             <input type="hidden" name="subject" value="New Sales Agent Application - Stack Crafts Studio">
             <input type="hidden" name="from_name" value="Stack Crafts Studio Hiring Portal">
-            <input type="hidden" name="redirect" value="https://hire.stackcrafts.com/">
+            <input type="hidden" name="redirect" value="https://hire.stackcrafts.com/thank-you.html">
 
             <div class="field">
               <label for="name">Full names *</label>
@@ -623,20 +770,97 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="wrap footer-inner">
-      <div>
-        <strong>STACK CRAFTS STUDIO</strong><br>
-        <span style="color:#dbe1ff">Your Gateway to a Smart Future</span>
+    <div class="wrap footer-main">
+
+      <div class="footer-about-column">
+        <div class="footer-brand">
+          <div class="logo" aria-hidden="true">S</div>
+          <div>
+            <strong>STACK CRAFTS STUDIO</strong>
+            <small>Your Gateway to a Smart Future</small>
+          </div>
+        </div>
+
+        <p class="footer-about">
+          We build smart digital solutions for businesses, schools, hospitals,
+          SACCOs, and other institutions. Join our sales agent team and help
+          more organizations benefit from technology.
+        </p>
+
+        <a class="footer-cta"
+           href="https://wa.me/254710911645?text=Hello%20Stack%20Crafts%20Studio%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+           target="_blank" rel="noopener noreferrer">
+          💬 Talk to Our Team
+        </a>
       </div>
 
-      <div class="footer-links">
-        <a href="https://hire.stackcrafts.com" target="_blank" rel="noopener noreferrer">Hiring Portal</a>
-        <a href="https://stackcrafts.com" target="_blank" rel="noopener noreferrer">Website</a>
-        <a href="https://wa.me/254710911645" target="_blank" rel="noopener noreferrer">WhatsApp: 0710911645</a>
-        <a href="tel:+254756225185">Call: 0756225185</a>
+      <div>
+        <h3 class="footer-heading">Quick Links</h3>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#top">Home</a>
+          <a href="#apply">Apply as a Sales Agent</a>
+          <a href="https://stackcrafts.com" target="_blank" rel="noopener noreferrer">Official Website</a>
+          <a href="https://tech.stackcrafts.com" target="_blank" rel="noopener noreferrer">Technology Services</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="footer-heading">Contact Us</h3>
+
+        <div class="footer-contact-item">
+          <span class="symbol">📱</span>
+          <span>
+            <a href="tel:+254710911645">0710 911 645</a>
+          </span>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="symbol">📞</span>
+          <span>
+            <a href="tel:+254756225185">0756 225 185</a>
+          </span>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="symbol">💬</span>
+          <span>
+            <a href="https://wa.me/254710911645" target="_blank" rel="noopener noreferrer">
+              WhatsApp Support
+            </a>
+          </span>
+        </div>
+
+        <div class="footer-contact-item">
+          <span class="symbol">🌐</span>
+          <span>
+            <a href="https://stackcrafts.com" target="_blank" rel="noopener noreferrer">
+              stackcrafts.com
+            </a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p class="copyright">
+          &copy; <span id="year">2026</span> Stack Crafts Studio. All rights reserved.
+        </p>
+
+        <p class="powered">
+          Powered by <strong>Stack Crafts Studio</strong>
+        </p>
+
+        <a class="back-top" href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
